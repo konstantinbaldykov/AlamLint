@@ -1,0 +1,19 @@
+        .overlayPreferenceValue(PopoverBoundsPreferenceKey.self) { value in
+            GeometryReader { geo in
+                VStack {
+                    Rectangle()
+                        .frame(width: value.width, height: value.height)
+                    //                    .offset(
+                    //                        x: value.minX,
+                    //                        y: value.minY
+                    //                    )
+                }
+            }
+        }
+        .onPreferenceChange(PopoverBoundsPreferenceKey.self) { value in
+            print("value", value)
+            popoverAnchor = value
+        }
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
